@@ -4,9 +4,9 @@ import React from 'react'
 export default function Navlink() {
     return (
         <nav className='space-x-5 uppercase font-semibold text-sm'>
-            <Link href="/">About</Link>
-            <Link href="/">Project</Link>
-            <Link href="/">Contact</Link>
+            <Link href="/about">About</Link>
+            <Link href="/project">Project</Link>
+            <Link href="/contact">Contact</Link>
         </nav>
     )
 }

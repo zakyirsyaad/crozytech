@@ -13,7 +13,7 @@ export default function Contact() {
                     <p className='font-light text-primary/50'>UI/UX design is the process of creating user interfaces and experiences that consider visual aspects, functionality, and user satisfaction.</p>
                 </div>
                 <Button asChild className="ease-out duration-300 transition-all lg:opacity-0 group-hover:opacity-100 font-bold uppercase">
-                    <Link href="/">Lets Contact</Link>
+                    <Link href="https://wa.link/aapdkj">Lets Contact</Link>
                 </Button>
 
             </div>
@@ -24,7 +24,7 @@ export default function Contact() {
                     <p className='font-light text-primary/50'>A website or web application is a digital platform accessible via the internet that provides users with information, services, or functionality tailored to their needs and interests.</p>
                 </div>
                 <Button asChild className="ease-out duration-300 transition-all lg:opacity-0 group-hover:opacity-100 font-bold uppercase">
-                    <Link href="/">Lets Contact</Link>
+                    <Link href="https://wa.link/aapdkj">Lets Contact</Link>
                 </Button>
 
             </div>
@@ -35,7 +35,7 @@ export default function Contact() {
                     <p className='font-light text-primary/50'>A mobile application is a software application designed to run on mobile devices, providing users with specific functionalities, services, or entertainment on their smartphones or tablets.</p>
                 </div>
                 <Button asChild className="ease-out duration-300 transition-all lg:opacity-0 group-hover:opacity-100 font-bold uppercase">
-                    <Link href="/">Lets Contact</Link>
+                    <Link href="https://wa.link/aapdkj">Lets Contact</Link>
                 </Button>
             </div>
         </section>

@@ -21,12 +21,12 @@ export default function SocialLink() {
                         <p className='uppercase font-semibold'>Social</p>
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <Link href="/" legacyBehavior passHref>
+                        <Link href="https://instagram.com/crozytech" target='_blank' legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Instagram
                             </NavigationMenuLink>
                         </Link>
-                        <Link href="/" legacyBehavior passHref>
+                        <Link href="https://www.linkedin.com/company/crozytech" target='_blank' legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Linkedin
                             </NavigationMenuLink>

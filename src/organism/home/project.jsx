@@ -38,7 +38,7 @@ export default function Project() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <img src={imgUIUX} alt="foto ui/ux project Crozy Tech" loading='lazy' className='aspect-[3/2] object-cover' />
+                            <img src={imgUIUX} alt="foto ui/ux project Crozy Tech" loading='lazy' className='aspect-[3/2] object-contain' />
                         </CardContent>
                     </Card>
                 </CarouselItem>

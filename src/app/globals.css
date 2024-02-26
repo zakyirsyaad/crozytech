@@ -83,7 +83,8 @@
   background-size: cover;
 } */
 
-#span-banner {
+#span-banner,
+#punchline {
   background: linear-gradient(to left,
       #1a9b7b 20%,
       #00FFC2 30%,
