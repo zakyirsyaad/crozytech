@@ -17,7 +17,6 @@ export default function Navbar() {
                     <SocialLink />
                     <ModeToggle />
                 </div>
-
             </div>
         </header>
     )

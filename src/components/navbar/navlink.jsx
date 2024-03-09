@@ -8,7 +8,6 @@ export default function Navlink() {
             <Link href="/project" className='hover:text-[#00FFC2] duration-300 hover:underline decoration-wavy underline-offset-4'>Project</Link>
             <Link href="/pricing" className='hover:text-[#00FFC2] duration-300 hover:underline decoration-wavy underline-offset-4'>Pricing</Link>
             <Link href="/contact" className='hover:text-[#00FFC2] duration-300 hover:underline decoration-wavy underline-offset-4'>Contact</Link>
-
         </nav>
     )
 }

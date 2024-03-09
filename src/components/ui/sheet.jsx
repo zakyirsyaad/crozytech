@@ -59,7 +59,7 @@ const SheetHeader = ({
   ...props
 }) => (
   <div
-    className={cn("flex flex-col space-y-2 text-center sm:text-left", className)}
+    className={cn("flex flex-col space-y-2", className)}
     {...props} />
 )
 SheetHeader.displayName = "SheetHeader"

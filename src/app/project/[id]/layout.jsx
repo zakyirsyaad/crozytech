@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function layout({ children }) {
     return (
-        <main className='mx-4 mt-10 lg:mx-8'>
+        <main className='mx-4 mt-10 lg:mx-24'>
             {children}
         </main>
     )

@@ -48,7 +48,7 @@ export default function CardMobile() {
                         <CarouselItem className="md:basis-1/2 lg:basis-1/3" key={index}>
                             <Link href={`/project/${project.id}`}>
                                 <Image src={project.foto_url[0]} alt={project.nama} width={400} height={400}
-                                    className=' h-[200px] md:w-[300px] lg:w-[425px] lg:h-[225px] object-cover object-top rounded lg:grayscale hover:filter-none duration-300' />
+                                    className=' h-[200px] md:w-[300px] lg:w-[425px] lg:h-[225px] object-cover object-center rounded lg:grayscale hover:filter-none duration-300' />
                             </Link>
                         </CarouselItem>
                     ))}

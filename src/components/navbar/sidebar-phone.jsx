@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/sheet"
 import { AlignLeft } from 'lucide-react'
 import { ModeToggle } from '../mode-toggle'
+import Navlink from './navlink'
 
 
 export default function SidebarPhone() {
@@ -17,9 +18,9 @@ export default function SidebarPhone() {
             <SheetTrigger><AlignLeft /></SheetTrigger>
             <SheetContent>
                 <SheetHeader>
-                    <SheetTitle>Are you absolutely sure?</SheetTitle>
                     <SheetDescription>
                         <ModeToggle />
+                        <Navlink />
                     </SheetDescription>
                 </SheetHeader>
             </SheetContent>
