@@ -23,11 +23,12 @@ export default function Project() {
     const imgWeb = "https://firebasestorage.googleapis.com/v0/b/jekydatabase.appspot.com/o/Screenshot%202024-01-03%20211723.png?alt=media&token=a407ed23-0ca3-4d94-bfad-9b478cca6a10"
     const imgMobileApp = "https://firebasestorage.googleapis.com/v0/b/jekydatabase.appspot.com/o/Screenshot%202024-01-03%20171329.png?alt=media&token=139e73fe-d689-424d-9ba6-2c29ef9240e3"
     return (
-        <Carousel className="mt-10 mx-10 lg:mx-40" plugins={[
+        <Carousel className="mt-20 mx-10 lg:mx-40 space-y-3" plugins={[
             Autoplay({
                 delay: 2000,
             }),
         ]}>
+            <p className='uppercase text-center text-lg text-[#00FFC2] font-semibold lg:text-2xl'>the project you need</p>
             <CarouselContent className="lg:-ml-4">
                 <CarouselItem className="md:basis-1/2 lg:basis-1/3 shadow-2xl">
                     <Card>

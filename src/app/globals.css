@@ -107,3 +107,11 @@
     background-position: 100% 50%;
   }
 }
+
+#punchline-about {
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/ecanteen-b8f4e.appspot.com/o/austin-distel-wD1LRb9OeEo-unsplash.jpg?alt=media&token=9e66d5cb-6ee3-4d52-8ec7-9a68052cb564');
+  /* background: url('https://firebasestorage.googleapis.com/v0/b/ecanteen-b8f4e.appspot.com/o/austin-distel-wD1LRb9OeEo-unsplash.jpg?alt=media&token=9e66d5cb-6ee3-4d52-8ec7-9a68052cb564') linear-gradient(to left, #1a9b7b 20%, #00FFC2 30%, #004232 70%, #44e0b9 80%); */
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+}

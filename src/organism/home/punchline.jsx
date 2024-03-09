@@ -9,9 +9,11 @@ export default function Punchline() {
                 <p className='font-bold text-lg lg:text-5xl capitalize' id='punchline'>“Anyone who has never made a mistake has never tried anything new”</p>
                 <p className='text-sm font-medium lg:text-2xl'>Albert Einstein</p>
             </div>
-            <Link href={"https://wa.link/aapdkj"}>
-                <Button className="bg-[#00FFC2] font-bold text-primary dark:text-secondary lg:text-2xl px-10 py-8 shadow-2xl">Collaborate Now !</Button>
-            </Link>
+
+            <Button className="bg-[#00FFC2] font-bold text-primary dark:text-secondary lg:text-2xl px-8 py-3 shadow-2xl lg:px-10 lg:py-8" asChild>
+                <Link href={"https://wa.link/aapdkj"}>Collaborate Now ! </Link>
+            </Button>
+
 
         </section>
     )

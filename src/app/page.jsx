@@ -1,5 +1,4 @@
 import Banner from "@/organism/home/banner";
-import VideoProfile from "@/components/video-profile";
 import AboutBanner from "@/organism/home/about-banner";
 import Project from "@/organism/home/project";
 import Contact from "@/organism/home/contact";
