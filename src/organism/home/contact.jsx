@@ -7,7 +7,7 @@ import Link from 'next/link'
 export default function Contact() {
     return (
         <section className='space-y-5 mt-20 mx-10 lg:mx-40 cursor-default'>
-            <p className='uppercase text-center text-lg text-[#00FFC2] font-semibold lg:text-2xl'>the service we provide</p>
+            <p className='uppercase text-lg lg:text-2xl'>Our Service</p>
             <div className='flex flex-col items-end gap-y-5  md:flex-row md:items-center justify-between group duration-300 gap-5'>
                 <div>
                     <p className='font-bold text-xl md:text-2xl lg:text-4xl'>UI/UX Design</p>

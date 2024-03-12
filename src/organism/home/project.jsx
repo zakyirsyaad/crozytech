@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Carousel,
     CarouselContent,
@@ -16,56 +16,60 @@ import {
 } from "@/components/ui/card"
 import Autoplay from "embla-carousel-autoplay"
 import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 
 export default function Project() {
-    const imgUIUX = "https://firebasestorage.googleapis.com/v0/b/jekydatabase.appspot.com/o/Screenshot%202024-02-25%20015937.png?alt=media&token=2d28fb86-2cbb-4ed6-8539-83ed1e49be6d"
-    const imgWeb = "https://firebasestorage.googleapis.com/v0/b/jekydatabase.appspot.com/o/Screenshot%202024-01-03%20211723.png?alt=media&token=a407ed23-0ca3-4d94-bfad-9b478cca6a10"
-    const imgMobileApp = "https://firebasestorage.googleapis.com/v0/b/jekydatabase.appspot.com/o/Screenshot%202024-01-03%20171329.png?alt=media&token=139e73fe-d689-424d-9ba6-2c29ef9240e3"
+    const [project, setProject] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    const getProject = async () => {
+        setLoading(true)
+        const res = await fetch('https://landing-page-kahlova.vercel.app/getallproject')
+        const projects = await res.json()
+        const dataProject = projects.data
+        setProject(dataProject)
+        setLoading(false)
+    }
+
+    useEffect(() => {
+        getProject()
+    }, [])
+
     return (
-        <Carousel className="mt-20 mx-10 lg:mx-40 space-y-3" plugins={[
+        <Carousel className="mt-20 mx-10 lg:mx-40 space-y-3 border-2 p-5 lg:p-10 rounded" plugins={[
             Autoplay({
                 delay: 2000,
             }),
         ]}>
-            <p className='uppercase text-center text-lg text-[#00FFC2] font-semibold lg:text-2xl'>the project you need</p>
+            <div className='flex flex-col items-center lg:flex-row justify-between gap-2'>
+                <p className='uppercase text-lg lg:text-2xl'>Our Featured Work</p>
+                <Button variant="outline">
+                    <Link href={'/project'} className='capitalize'>see all project</Link>
+                </Button>
+            </div>
+
             <CarouselContent className="lg:-ml-4">
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3 shadow-2xl">
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>UI/UX</CardTitle>
-                            <CardDescription>
-                                <Link href="/project">see more</Link>
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <img src={imgUIUX} alt="foto ui/ux project Crozy Tech" loading='lazy' className='aspect-[3/2] object-contain' />
-                        </CardContent>
-                    </Card>
-                </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3 shadow-2xl">
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="truncate">Website/Web Application</CardTitle>
-                            <CardDescription> <Link href="/project">see more</Link></CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <img src={imgWeb} alt="foto ui/ux project Crozy Tech" loading='lazy' className='aspect-[3/2] object-cover' />
-                        </CardContent>
-                    </Card>
-                </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3 shadow-2xl">
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Mobile Application</CardTitle>
-                            <CardDescription> <Link href="/project">see more</Link></CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <img src={imgMobileApp} alt="foto ui/ux project Crozy Tech" loading='lazy' className='aspect-[3/2] object-contain' />
-                        </CardContent>
-                    </Card>
-                </CarouselItem>
+                {project.map((project, index) => (
+                    <CarouselItem className="md:basis-1/2 lg:basis-1/3 shadow-2xl" key={index}>
+                        <Card id="bg-featured" className=' flex flex-col justify-between' >
+                            <CardHeader>
+                                <div className='space-y-5'>
+                                    <p className='text-sm text-end'><span className='border-2 px-2 py-1 rounded-md'>{project.kategori}</span></p>
+                                    <CardTitle className="capitalize truncate">{project.nama}</CardTitle>
+                                </div>
+                            </CardHeader>
+                            <CardContent>
+                                <CardDescription className="truncate">
+                                    {project.deskripsi}
+                                </CardDescription>
+                                <Link href={`/project/${project.id}`}>see more</Link>
+                            </CardContent>
+                        </Card>
+                    </CarouselItem>
+                ))}
+
             </CarouselContent>
-        </Carousel>
+        </Carousel >
     )
 }

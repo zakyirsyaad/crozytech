@@ -115,3 +115,9 @@
   background-position: center;
   background-size: cover;
 }
+
+#bg-featured {
+  background-image: url('../../public/image/bg-featureproject.jpg');
+  object-fit: cover;
+  background-position: center;
+}
