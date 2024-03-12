@@ -17,6 +17,7 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
 
 
 export default function Project() {
@@ -25,7 +26,7 @@ export default function Project() {
 
     const getProject = async () => {
         setLoading(true)
-        const res = await fetch('https://landing-page-kahlova.vercel.app/getallproject')
+        const res = await fetch('https://landing-page-kahlova.vercel.app/projects')
         const projects = await res.json()
         const dataProject = projects.data
         setProject(dataProject)
@@ -37,7 +38,7 @@ export default function Project() {
     }, [])
 
     return (
-        <Carousel className="mt-20 mx-10 lg:mx-40 space-y-3 border-2 p-5 lg:p-10 rounded" plugins={[
+        <Carousel className="mt-20 mx-10 lg:mx-40 space-y-10 border-2 p-5 lg:p-10 rounded" plugins={[
             Autoplay({
                 delay: 2000,
             }),
@@ -50,24 +51,25 @@ export default function Project() {
             </div>
 
             <CarouselContent className="lg:-ml-4">
-                {project.map((project, index) => (
-                    <CarouselItem className="md:basis-1/2 lg:basis-1/3 shadow-2xl" key={index}>
-                        <Card id="bg-featured" className=' flex flex-col justify-between' >
-                            <CardHeader>
-                                <div className='space-y-5'>
-                                    <p className='text-sm text-end'><span className='border-2 px-2 py-1 rounded-md'>{project.kategori}</span></p>
-                                    <CardTitle className="capitalize truncate">{project.nama}</CardTitle>
-                                </div>
-                            </CardHeader>
-                            <CardContent>
-                                <CardDescription className="truncate">
-                                    {project.deskripsi}
-                                </CardDescription>
-                                <Link href={`/project/${project.id}`}>see more</Link>
-                            </CardContent>
-                        </Card>
-                    </CarouselItem>
-                ))}
+                {loading ? <Skeleton className="h-[200px] md:w-[300px] lg:w-[425px] lg:h-[225px]" />
+                    : project.map((project, index) => (
+                        <CarouselItem className="md:basis-1/2 lg:basis-1/3 shadow-2xl" key={index}>
+                            <Card id="bg-featured" className=' flex flex-col justify-between' >
+                                <CardHeader>
+                                    <div className='space-y-5'>
+                                        <p className='text-sm text-end'><span className='border-2 px-2 py-1 rounded-md text-secondary dark:text-primary'>{project.kategori}</span></p>
+                                        <CardTitle className="capitalize truncate text-secondary dark:text-primary">{project.nama}</CardTitle>
+                                    </div>
+                                </CardHeader>
+                                <CardContent>
+                                    <CardDescription className="truncate">
+                                        {project.deskripsi}
+                                    </CardDescription>
+                                    <Link href={`/project/${project.id}`} className='text-secondary dark:text-primary'>see more</Link>
+                                </CardContent>
+                            </Card>
+                        </CarouselItem>
+                    ))}
 
             </CarouselContent>
         </Carousel >

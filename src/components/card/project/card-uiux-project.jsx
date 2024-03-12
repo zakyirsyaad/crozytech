@@ -15,8 +15,7 @@ export default function CardUIUXProject() {
     const { toast } = useToast();
 
     const getProjects = async () => {
-        setLoading(true, toast({ title: "Loading projects UI/UX" }))
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/getallproject?kategori=1`)
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/projects?kategori=product%20design`)
         try {
             const project = await res.json()
             setProjects(project.data)
@@ -45,8 +44,8 @@ export default function CardUIUXProject() {
                             </Link>
                         </CarouselItem>
                     ))}
-
             </CarouselContent>
+            {projects.length === 0 && <p> No projects found</p>}
         </Carousel>
     );
 }

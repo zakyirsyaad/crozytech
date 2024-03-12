@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import {
     Carousel,
     CarouselContent,
@@ -18,8 +18,7 @@ export default function CardMobile() {
     const { toast } = useToast()
 
     const getProjects = async () => {
-        setLoading(true, toast({ title: "Loading projects Mobile" }))
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/getallproject?kategori=2`)
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/projects?kategori=Mobile%20Development`)
         try {
             const project = await res.json()
             setProjects(project.data)

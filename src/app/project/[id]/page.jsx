@@ -7,7 +7,7 @@ import DescProject from '@/organism/project/detailproject/desc-project'
 
 export default async function page({ params }) {
     const id = params.id
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/getproject/${id}`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/project/${id}`)
     const getDetailProjects = await res.json()
     const detailProject = getDetailProjects.data
     const formatDate = (timestamp) => {
